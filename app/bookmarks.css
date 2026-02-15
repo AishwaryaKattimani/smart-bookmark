@@ -1,0 +1,251 @@
+/* =========================
+   PAGE BACKGROUND
+========================= */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* =========================
+   MAIN GLASS CONTAINER
+========================= */
+.container {
+  width: 100%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  color: white;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Smooth entrance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.topBar h1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  background: #ff4b5c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.logoutBtn:hover {
+  background: #ff1f3d;
+  transform: scale(1.05);
+}
+
+/* =========================
+   ADD BOOKMARK FORM
+========================= */
+.addBox {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.addBox input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.addBox input:focus {
+  box-shadow: 0 0 0 2px #00c9a7;
+}
+
+.addBox button {
+  background: #00c9a7;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.addBox button:hover {
+  background: #00b38f;
+  transform: scale(1.05);
+}
+
+/* =========================
+   SEARCH
+========================= */
+.searchBox {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.searchBox:focus {
+  box-shadow: 0 0 0 2px #ffd369;
+}
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+.categories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.categories button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background: white;
+  color: #333;
+  transform: translateY(-2px);
+}
+
+.activeCat {
+  background: #00c9a7 !important;
+  color: white !important;
+}
+
+/* =========================
+   BOOKMARK LIST
+========================= */
+.bookmarkList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bookmarkCard {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 18px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.bookmarkCard:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Left side */
+.bookmarkInfo h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.bookmarkInfo a {
+  color: #ffd369;
+  text-decoration: none;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+.bookmarkInfo a:hover {
+  text-decoration: underline;
+}
+
+.categoryTag {
+  font-size: 11px;
+  margin-top: 6px;
+  opacity: 0.8;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.actions button {
+  margin-left: 8px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.actions button:first-child {
+  background: #3498db;
+}
+
+.actions button:last-child {
+  background: #e74c3c;
+}
+
+.actions button:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+  .addBox {
+    flex-direction: column;
+  }
+
+  .bookmarkCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    align-self: flex-end;
+  }
+}

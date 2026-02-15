@@ -1,26 +1,248 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ===============================
+   RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.25s ease;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===============================
+   PAGE BACKGROUND
+================================= */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* ===============================
+   MAIN CONTAINER
+================================= */
+.container {
+  width: 100%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
+/* ===============================
+   TOP BAR
+================================= */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topBar h2 {
+  font-size: 22px;
+}
+
+.logoutBtn {
+  background: #ff4b5c;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background: #ff1f3d;
+}
+
+/* ===============================
+   ADD BOOKMARK FORM
+================================= */
+.addBox {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.addBox input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  min-width: 0;
+}
+
+.addBox button {
+  background: linear-gradient(45deg, #00c9a7, #00b38f);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ===============================
+   SEARCH
+================================= */
+.searchBox {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 18px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* ===============================
+   CATEGORY BUTTONS
+================================= */
+.categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.categories button {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 13px;
+}
+
+.activeCat {
+  background: #00c9a7 !important;
+  color: white !important;
+}
+
+/* ===============================
+   BOOKMARK LIST
+================================= */
+.bookmarkList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===============================
+   BOOKMARK CARD
+================================= */
+.bookmarkCard {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.bookmarkCard h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.bookmarkCard a {
+  color: #ffd369;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.categoryTag {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================= */
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.actions button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 12px;
+}
+
+.actions button:first-child {
+  background: #f39c12;
+}
+
+.actions button:last-child {
+  background: #e74c3c;
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 18px;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .addBox {
+    flex-direction: column;
+  }
+
+  .addBox button {
+    width: 100%;
+  }
+
+  .bookmarkCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .topBar h2 {
+    font-size: 18px;
+  }
+
+  .bookmarkCard h3 {
+    font-size: 15px;
+  }
+
+  .logoutBtn {
+    width: 100%;
+  }
 }

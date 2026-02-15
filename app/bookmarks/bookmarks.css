@@ -1,0 +1,239 @@
+/* ===== Global & Container ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #111827;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Top Bar ===== */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.topBar h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logoutBtn {
+  padding: 8px 16px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.logoutBtn:hover {
+  background-color: #dc2626;
+}
+
+/* ===== Add Bookmark Box ===== */
+.addBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.addBox input {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.addBox button {
+  padding: 10px 18px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.addBox button:hover {
+  background-color: #059669;
+}
+
+/* ===== Search Box ===== */
+.searchBox {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* ===== Categories ===== */
+.categories {
+  margin-bottom: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.categories button {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #e5e7eb;
+  cursor: pointer;
+  font-weight: 500;
+  color: #111827;
+  transition: 0.2s;
+}
+
+.categories button:hover {
+  background-color: #d1d5db;
+}
+
+.categories .activeCat {
+  background-color: #10b981;
+  color: white;
+}
+
+/* ===== Bookmark List ===== */
+.bookmarkList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ===== Bookmark Card ===== */
+.bookmarkCard {
+  background-color: white;
+  padding: 25px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content */
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  color: #111827;
+  text-align: center;
+}
+
+.bookmarkCard:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* ===== Title + URL + Category Row ===== */
+.bookmarkInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bookmarkCard h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.bookmarkCard a {
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+  word-break: break-word;
+  font-size: 1rem;
+}
+
+.bookmarkCard a:hover {
+  text-decoration: underline;
+}
+
+.categoryTag {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.75rem;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* ===== Action Buttons ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.actions button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.actions button:first-child {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background-color: #2563eb;
+}
+
+.actions button:last-child {
+  background-color: #ef4444;
+  color: white;
+}
+
+.actions button:last-child:hover {
+  background-color: #dc2626;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .addBox {
+    flex-direction: column;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== Delete Animation ===== */
+.bookmarkCard.fadeOut {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.3s ease-out;
+}

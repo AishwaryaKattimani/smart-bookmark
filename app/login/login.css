@@ -1,0 +1,170 @@
+/* Basic reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+}
+
+/* Full screen gradient background */
+.login-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f7797d);
+  overflow: hidden;
+  padding: 1rem;
+}
+
+/* Floating background shapes */
+.background-shapes span {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.12;
+  background: #fff;
+  animation: float 20s linear infinite;
+}
+
+.background-shapes span:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+  animation-duration: 25s;
+}
+
+.background-shapes span:nth-child(2) {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -80px;
+  animation-duration: 30s;
+}
+
+.background-shapes span:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 70%;
+  animation-duration: 22s;
+}
+
+.background-shapes span:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  right: 60%;
+  animation-duration: 18s;
+}
+
+.background-shapes span:nth-child(5) {
+  width: 250px;
+  height: 250px;
+  bottom: 10%;
+  left: 40%;
+  animation-duration: 28s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+/* Floating login card with soft glow */
+.login-card {
+  position: relative;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  z-index: 10;
+  animation: floatCard 6s ease-in-out infinite;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating card animation */
+@keyframes floatCard {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.login-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Info text */
+.login-info {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Google login button with hover glow */
+.login-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+}
+
+.login-button:hover {
+  background-color: #3367d6;
+  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.6);
+}
+
+/* Loading text */
+.loading-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+  .login-card h1 {
+    font-size: 2rem;
+  }
+}
